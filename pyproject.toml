@@ -15,9 +15,6 @@ dependencies = [
     "pygame-ce==2.5.7",
 ]
 
-[project.scripts]
-rl-fundamentals = "rl_fundamentals:main"
-
 [build-system]
 requires = ["uv_build>=0.12.13,<0.13.0"]
 build-backend = "uv_build"
