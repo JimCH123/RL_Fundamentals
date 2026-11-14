@@ -1,0 +1,3 @@
+[submodule "third_party/DungeonMazeWorld"]
+	path = third_party/DungeonMazeWorld
+	url = https://github.com/uobcll/SEMTM0016_DungeonMazeWorld

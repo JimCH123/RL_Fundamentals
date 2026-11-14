@@ -1,0 +1,22 @@
+# Python 產生的暫存檔
+__pycache__/
+*.py[oc]
+build/
+dist/
+*.egg-info
+
+# 虛擬環境
+.venv/
+
+# 測試暫存
+.pytest_cache/
+
+# 訓練產生的大檔案（圖片可以保留上傳）
+results/*.npy
+results/*.npz
+
+# 作業系統和編輯器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
