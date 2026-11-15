@@ -1,7 +1,7 @@
 [project]
 name = "rl-fundamentals"
 version = "0.1.0"
-description = "Add your description here"
+description = "Tabular Q-learning and SARSA from scratch on a grid maze"
 readme = "README.md"
 authors = [
     { name = "Jim Chen", email = "jim230691@gmail.com" }
