@@ -32,6 +32,6 @@ def obs_to_state(obs):
     return x, y, int(d)
 
 
-def is_terminal_state(state, grid_size):
-    x, y, d = state
-    return x == (grid_size - 2) and y == (grid_size - 2)
+# def is_terminal_state(state, grid_size):
+#     x, y, d = state
+#     return x == (grid_size - 2) and y == (grid_size - 2)

@@ -6,8 +6,11 @@ import numpy as np
 from rl_fundamentals.q_learning import gamma, learning_rate, num_episodes, q_learning
 from rl_fundamentals.utils import DungeonMazeEnv, dim, num_actions
 
+FIGURE_DIR = Path("plots/q_learning")
+
 if __name__ == "__main__":
     env = DungeonMazeEnv(render_mode=None, grid_size=dim)
+    FIGURE_DIR.mkdir(parents=True, exist_ok=True)
 
 
     #---------------------------Analysize for different gamma--------------------------
@@ -30,6 +33,7 @@ if __name__ == "__main__":
     plt.legend()
     plt.grid(True)
     plt.yscale('log')
+    plt.savefig(FIGURE_DIR / "convergence_gamma.png", dpi=150, bbox_inches="tight")
     plt.show()
 
     plt.figure(figsize=(8, 6))
@@ -41,6 +45,7 @@ if __name__ == "__main__":
     plt.title("Q-Learning Performance")
     plt.legend()
     plt.grid(True)
+    plt.savefig(FIGURE_DIR / "reward_gamma.png", dpi=150, bbox_inches="tight")
     plt.show()
 
 
@@ -61,6 +66,7 @@ if __name__ == "__main__":
     plt.title("Q-learning Reward (Initialisation = zeros)")
     plt.legend()
     plt.grid(True)
+    plt.savefig(FIGURE_DIR / "reward_learning_rate.png", dpi=150, bbox_inches="tight")
     plt.show()
 
     #---------------------Train once with the default settings and save the Q table-------------------

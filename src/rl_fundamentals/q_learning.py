@@ -2,7 +2,6 @@ import numpy as np
 
 from rl_fundamentals.utils import (
     epsilon_greedy,
-    is_terminal_state,
     max_step,
     num_directions,
     obs_to_state,
@@ -19,24 +18,19 @@ def q_learning(env, num_actions, num_episodes, dim, learning_rate, gamma):
     error_per_run = []
     rewards_per_run = []
 
-    for i in range(RUN):
+    for _ in range(RUN):
         q_table = np.zeros((dim, dim, num_directions, num_actions))
         rewards_per_episode = []
         errors = []
-        threshold = 1e-8
 
         for episode in range(num_episodes):
             current_epsilon = epsilon * (1 - episode / num_episodes)
             obs, info = env.reset(seed = 124)
             state = obs_to_state(obs)
             cumulated_reward = 0
-            old_q = np.copy(q_table)
             updated_pairs = []
 
             for step in range(max_step):  # cap episode length (the env itself never truncates)
-                if is_terminal_state(state, dim):
-                    break
-
                 action = epsilon_greedy(current_epsilon, q_table, obs)
                 next_obs, reward, done, truncated, info = env.step(action)
                 # The env gives 0 reward for bumping into a wall, so with any gamma "bump forever"
